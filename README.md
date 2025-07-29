@@ -30,7 +30,4 @@
 - EC2: Used to host the website using a t2.micro instance.
 
 - S3: Used to store static web files (HTML and CSS).
-
-## TODO
-
-It displays the default Apache index page instead of the website files stored in S3 (s3 bucket policy related)
+  

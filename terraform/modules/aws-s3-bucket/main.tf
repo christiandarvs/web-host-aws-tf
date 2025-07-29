@@ -30,22 +30,17 @@ resource "aws_s3_bucket_policy" "s3_bucket" {
       {
         Effect    = "Allow"
         Principal = "*"
-        Action    = "s3:GetObject"
+        Action = ["s3:ListBucket",
+          "s3:GetObject",
+        "s3:PutObject"]
         Resource = [
           "${aws_s3_bucket.main.arn}",
           "${aws_s3_bucket.main.arn}/*"
         ]
       },
-      {
-        Principal = "*"
-        Effect    = "Allow",
-        Action    = ["s3:ListBucket"],
-        Resource = [
-          "${aws_s3_bucket.main.arn}",
-        ]
-      },
     ]
   })
+
 }
 
 

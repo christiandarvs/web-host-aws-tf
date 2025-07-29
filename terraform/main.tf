@@ -1,8 +1,8 @@
 module "ec2-instance" {
   source        = "./modules/aws-ec2-instance"
   instance_name = "Web Server"
-
 }
+
 
 module "s3-bucket" {
   source      = "./modules/aws-s3-bucket"
@@ -12,3 +12,4 @@ module "s3-bucket" {
     "Environment" = "Dev",
   }
 }
+

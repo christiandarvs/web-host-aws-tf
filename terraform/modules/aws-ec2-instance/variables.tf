@@ -14,4 +14,3 @@ variable "instance_name" {
   description = "Name of the EC2 Instance"
   type        = string
 }
-
