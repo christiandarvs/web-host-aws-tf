@@ -4,9 +4,9 @@ resource "aws_instance" "main" {
   associate_public_ip_address = true
   vpc_security_group_ids      = [aws_security_group.allow_access.id]
   user_data                   = file("${path.module}/init_script.sh")
-  iam_instance_profile        = aws_iam_instance_profile.ec2_profile.name
   key_name                    = "Simple-Website-Key"
   depends_on                  = [aws_iam_instance_profile.ec2_profile]
+  iam_instance_profile        = aws_iam_instance_profile.ec2_profile.name
 
   tags = {
     "Name"        = "Web Server",
